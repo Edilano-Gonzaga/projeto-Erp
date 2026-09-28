@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Projeto Gestão de Estoque</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <h1>Controle de Estoque</h1>
+        <nav>
+          <ul>
+            <li><a href="" class="dashboard">Dashboard</a></li>
+
+            <li><a href="" class="produtos">Produtos</a></li>
+
+            <li><a href="" class="estoque">Estoque</a></li>
+
+            <li><a href="" class="venda">Venda</a></li>
+
+            <li><a href="" class="relatorio">Relatório</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="cards">
+        <h2 class="tituloescondido"">Resumo do estoque</h2>
+        <!--Adicionado apenas por causa da semântica-->
+        <div class="total">
+          <p>Total de Estoque</p>
+          <h2>150</h2>
+          <p>Produtos Cadastrados</p>
+        </div>
+
+        <div class="estoquebaixo">
+          <p>Estoque Baixo</p>
+          <h2>8</h2>
+          <p>Atenção repor estoque</p>
+        </div>
+
+        <div class="zerados">
+          <p>Zerados</p>
+          <h2>2</h2>
+          <p>Sem estoque</p>
+        </div>
+      </section>
+
+      <section class="dadosstorage">
+        <!--1.Barra de Navegação-->
+        <div class="toolbar">
+          <div class="busca">
+            <input
+              type="search"
+              placeholder="Buscar por código ou nome..."
+              name=""
+              id=""
+            />
+          </div>
+
+          <div class="acoes-topo">
+            <button class="btn-filtros" type="button">Filtros</button>
+            <button class="btn-novo" type="button">+ Novo Produto</button>
+          </div>
+        </div>
+        <!--2. Tabela-->
+        <div class="tabela-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Qtd Atual</th>
+                <th>Mínimo</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>PRD-0012</td>
+                <td>Parafuso Sextavado 8mm</td>
+                <td>45</td>
+                <td>20</td>
+                <td><span class="status-ok">OK</span></td>
+                <td>
+                  <button type="button" class="entrada">+ Entrada</button>
+                  <button type="button" class="saida">- Saída</button>
+                </td>
+              </tr>
+              <!--repete os outros <tr>-->
+            </tbody>
+          </table>
+        </div>
+        <!--3. RODAPÉ DA TABELA-->
+        <div class="paginacao">
+          <p>Mostrando 5 de 124 itens</p>
+          <div class="paginas">
+            <button type="button">Anterior</button>
+            <span>1 2 3 ... 25</span>
+            <button type="button">Próximo</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

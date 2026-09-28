@@ -1,0 +1,291 @@
+@charset 'utf-8';
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+body{
+    background-color: #f5f6fa;
+}
+
+header{
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+   
+}
+
+h1{
+    color: #271d7a;
+}
+
+
+ul{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    
+}
+
+a{
+    color: #807b7b;
+    text-decoration: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+
+}
+
+.dashboard:hover, .produtos:hover, .estoque:hover, .venda:hover, .relatorio:hover{
+    color: #271d7a;
+}
+
+.cards{
+    display: flex;
+    gap: 20px 15px;
+    padding: 20px;
+  
+}
+
+ 
+.total{
+   border-color: #e8e5ff; 
+   background-color: #2d24689d;  
+   
+}
+
+.estoquebaixo{
+    border-color: #ffe4e4;
+    background-color: #7a1a1a89;
+    
+}
+
+.zerados{
+    border-color: #f5efe8;
+    background-color: #5a4a3a92;
+    
+}
+
+
+
+.total, .estoquebaixo, .zerados{
+    flex: 1;
+    text-align: center;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+.cards p {
+    font-size: 20px;
+    margin: 4px 0;
+    opacity: 0.8;
+}
+
+.total h2, .estoquebaixo h2, .zerados h2{
+    font-size: 3.2rem;
+    margin: 8px 0;
+    line-height: 1;
+}
+
+.total h2{
+    
+    color: #3b2f8aa3;
+}
+
+.estoquebaixo h2{
+    
+    color: #b91c1c;
+}
+
+.zerados h2{
+    
+    color: #7a2e2e;
+}
+
+.tituloescondido{/*chamamos de sr-only = screen-reader only. serve para esconder algo na tela, mas deixa o google e leitores de cegos lerem*/
+  position: absolute;/*tia o tpitulo do fluxo da página, Ele não empurra mais nada.*/
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;/*Se tiver texto maior que 1px, corta e não deixa vazar.*/
+  clip-path: inset(50%);/*é a tesoura moderna. corta 50% de cada lado, o elemento some visualmente, substituindo o clip.*/
+  white-space: nowrap;/*Garante que o texto não quebre linha e não apareça borda estranha*/
+  border: 0;
+
+  /*porque não usei o display: none? none, o google também não vê. por isso usei esse truque.*/
+   
+}
+
+.dadosstorage{
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0,0.05 );
+}
+
+.toolbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.busca{
+  flex: 1; /* faz a busca crescer */
+}
+
+.busca input{
+  width: 100%;
+  max-width: 500px; /* fica grande mas não gigante */
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.acoes-topo{
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0; /* botões não esmagam */
+}
+
+.acoes-topo button{
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-novo{
+    background: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+/*Container branco da tabela*/
+.tabela-container{
+    margin-top: 20px;
+    border-top: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;/*deixa as bordas arredondadas*/
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th{
+    background: #f8f9fa;
+    text-align: left;
+    padding: 14px 16px;
+    font-size: 25px;
+    color: #666;
+    border-bottom: 1px solid #eee;
+}
+
+td{
+    padding: 14px 16px;
+    font-size: 20px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+tbody tr:hover{
+    background: #f9f9f9;
+}
+
+/*Status colorido*/
+.status-ok{
+    background: #e6f4ea;
+    color: #137333;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/*Botões de Entrada / Saída*/
+
+.entrada, .saida{
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 4px;
+    color: #fff;
+}
+
+.entrada:hover, .saida:hover{
+    background: #000;
+    color: #137333;
+}
+
+.entrada{
+    background: #000;
+}
+
+.saida{
+    background: #666;
+}
+
+
+/*RODAPÉ DA TABEÇA - PAGINAÇÃO */
+.paginacao{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+    background: #fff;
+}
+
+.paginacao p{
+    font-size: 13px;
+    color: #888;
+    margin: 0px;
+}
+
+.paginas{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.paginas span{
+    font-size: 13px;
+    color: #555;
+    letter-spacing: 2px;/*separa 0 1 2 3 ... 25*/
+} 
+
+.paginas button{
+    padding: 6px 14px;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.paginas button:hover{
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
