@@ -1,0 +1,167 @@
+/* ===== produtos.css - SÓ O QUE É SÓ DE PRODUTOS ===== */
+
+/* Topo da página produtos */
+.pagina-produtos {
+    padding: 20px;
+}
+.produtos-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.produtos-topo h2 {
+    color: #271d7a;
+}
+
+/* Barra de busca + botão limpar */
+.barra-pesquisa {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.barra-pesquisa input {
+    flex: 1;
+    max-width: 500px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* Link ativo no menu */
+a.ativo {
+    color: #271d7a;
+    font-weight: 600;
+}
+
+/* SÓ ISSO AQUI É NOVO e não tem no global */
+.btn-acao {
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 4px;
+}
+.btn-editar { background: #dbeafe; color: #1d4ed8; }
+.btn-editar:hover { background: #bfdbfe; }
+.btn-excluir { background: #fee2e2; color: #dc2626; }
+.btn-excluir:hover { background: #fecaca; }
+
+.estoque-baixo { 
+    color: #dc2626; 
+    font-weight: bold; 
+}
+
+/* MODAL - não tem no global, então fica aqui */
+.modal-fundo {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.modal-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.btn-fechar {
+    background: #f1f1f1;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.modal form label {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #666;
+    font-weight: 600;
+}
+.modal form input, .modal form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 4px;
+}
+.modal-botoes {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/*
+================ LEGENDA DIDÁTICA - produtos.css ================
+POR QUE ESSE ARQUIVO EXISTE SEPARADO DO global.css?
+
+Boa prática que é o  certo: global.css = tudo que repete em TODAS as páginas (header, tabela, botões)
+produtos.css = só o que é exclusivo da página de produtos. Se você mudar o modal, não quebra o dashboard.
+
+--- AÇÕES DO ARQUIVO ---
+
+AÇÃO 1 - ORGANIZAÇÃO DA PÁGINA:
+- .pagina-produtos padding:20px: Respiro da página, não cola na borda
+- .produtos-topo display:flex + space-between: Título "Produtos" na esquerda, botão "+ Novo Produto" na direita
+- h2 color #271d7a: Mesma cor do h1 do header, identidade visual
+
+AÇÃO 2 - BARRA DE PESQUISA (COLOQUEI PRA FUNCIONAR):
+- .barra-pesquisa display:flex + gap:10px: Input e botão "Limpar Tudo" lado a lado com espaço
+- input flex:1: Faz o input crescer e ocupar o espaço que sobra
+- max-width:500px: Não deixa gigante em monitor grande
+- padding 10px 16px + border-radius 8px + border 1px solid #ddd: Mesmo estilo da busca do global, consistência
+- Essa barra é o coração do filtro que fizemos no JS
+
+AÇÃO 3 - MENU ATIVO:
+- a.ativo color #271d7a + font-weight:600: Quando está em produtos.html, link fica roxo e negrito
+- Feedback pro usuário saber onde está, UX básico
+
+AÇÃO 4 - BOTÕES DE AÇÃO DA TABELA (NOVIDADE DESTA PÁGINA):
+- .btn-acao: Classe base pra todos os botões de ação (Editar/Excluir), padding pequeno, borda arredondada
+- .btn-editar background #dbeafe (azul clarinho) + color #1d4ed8 (azul escuro): Padrão azul = editar
+- :hover background #bfdbfe: Azul fica um pouco mais escuro ao passar mouse
+- .btn-excluir background #fee2e2 (vermelho clarinho) + color #dc2626: Vermelho = perigo/excluir
+- Isso é semântica de cor, usuário já associa
+
+AÇÃO 5 - DESTAQUE DE ESTOQUE BAIXO:
+- .estoque-baixo color #dc2626 + font-weight:bold: Quando qtd <= minimo, JS adiciona essa classe
+- Fica vermelho e negrito, chama atenção pra repor
+
+AÇÃO 6 - MODAL (JANELA QUE FLUTUA):
+- .modal-fundo display:none: Começa escondido! JS muda pra flex quando clica em Novo Produto
+- position:fixed + inset:0: Ocupa a tela toda, fixed não rola junto
+- background rgba(0,0,0,0.5): Preto com 50% transparência, escurece o fundo
+- justify-content:center + align-items:center: Centraliza o modal no meio da tela
+- z-index:1000: Garante que fica por cima de tudo, até do header
+
+- .modal background white + border-radius 12px: Caixa branca arredondada
+- width:90% + max-width:500px: Em celular ocupa 90%, em desktop no máximo 500px, responsivo
+- box-shadow 0 10px 30px rgba(0,0,0,0.2): Sombra grande, efeito de flutuar
+
+- .modal-topo flex space-between: Título "Novo Produto" na esquerda, botão X na direita
+- .btn-fechar width 30px height 30px border-radius 50%: Botão redondo, padrão moderno
+
+- .modal form label display:block + margin-top:12px: Cada label em uma linha, com espaço
+- font-size 13px + color #666 + font-weight 600: Label pequeno, cinza, mas em negrito
+- input, select width:100% + padding 10px + border-radius 8px: Campos ocupam tudo, arredondados
+- margin-top:4px: Espaço entre label e input
+
+- .modal-botoes display:flex + gap:10px + justify-content:flex-end: Botões Cancelar e Salvar alinhados à direita, com espaço
+- margin-top:20px: Separa botões do último campo
+*/

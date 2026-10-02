@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/global-style.css" />
     <title>Projeto Gestão de Estoque</title>
   </head>
 
@@ -14,13 +14,9 @@
         <nav>
           <ul>
             <li><a href="" class="dashboard">Dashboard</a></li>
-
-            <li><a href="" class="produtos">Produtos</a></li>
-
+            <li><a href="produtos.html" class="produtos">Produtos</a></li>
             <li><a href="" class="estoque">Estoque</a></li>
-
             <li><a href="" class="venda">Venda</a></li>
-
             <li><a href="" class="relatorio">Relatório</a></li>
           </ul>
         </nav>
@@ -29,20 +25,17 @@
 
     <main>
       <section class="cards">
-        <h2 class="tituloescondido"">Resumo do estoque</h2>
-        <!--Adicionado apenas por causa da semântica-->
+        <h2 class="tituloescondido">Resumo do estoque</h2>
         <div class="total">
           <p>Total de Estoque</p>
           <h2>150</h2>
           <p>Produtos Cadastrados</p>
         </div>
-
         <div class="estoquebaixo">
           <p>Estoque Baixo</p>
           <h2>8</h2>
           <p>Atenção repor estoque</p>
         </div>
-
         <div class="zerados">
           <p>Zerados</p>
           <h2>2</h2>
@@ -50,63 +43,29 @@
         </div>
       </section>
 
-      <section class="dadosstorage">
-        <!--1.Barra de Navegação-->
-        <div class="toolbar">
-          <div class="busca">
-            <input
-              type="search"
-              placeholder="Buscar por código ou nome..."
-              name=""
-              id=""
-            />
-          </div>
-
-          <div class="acoes-topo">
-            <button class="btn-filtros" type="button">Filtros</button>
-            <button class="btn-novo" type="button">+ Novo Produto</button>
-          </div>
-        </div>
-        <!--2. Tabela-->
-        <div class="tabela-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Código</th>
-                <th>Nome</th>
-                <th>Qtd Atual</th>
-                <th>Mínimo</th>
-                <th>Status</th>
-                <th>Ações</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td>PRD-0012</td>
-                <td>Parafuso Sextavado 8mm</td>
-                <td>45</td>
-                <td>20</td>
-                <td><span class="status-ok">OK</span></td>
-                <td>
-                  <button type="button" class="entrada">+ Entrada</button>
-                  <button type="button" class="saida">- Saída</button>
-                </td>
-              </tr>
-              <!--repete os outros <tr>-->
-            </tbody>
-          </table>
-        </div>
-        <!--3. RODAPÉ DA TABELA-->
-        <div class="paginacao">
-          <p>Mostrando 5 de 124 itens</p>
-          <div class="paginas">
-            <button type="button">Anterior</button>
-            <span>1 2 3 ... 25</span>
-            <button type="button">Próximo</button>
-          </div>
-        </div>
-      </section>
+        
+        
+        
     </main>
   </body>
 </html>
+
+<!--
+================ LEGENDA DIDÁTICA - index.html =================
+
+AÇÃO 1 - CABEÇALHO (HEADER) - NAVEGAÇÃO GLOBAL:
+- <header>: Semântica, é o topo do sistema
+- div class="container": Truque que você usou pra centralizar e limitar largura, igual em todas as páginas
+- h1 Controle de Estoque: Título do sistema
+- nav > ul > li > a: Menu de navegação. Você usou classes (dashboard, produtos, etc) pra estilizar cada um
+    - href="produtos.html": Link que leva pra página de produtos que fizemos
+
+AÇÃO 2 - CARDS DE RESUMO (DASHBOARD):
+- <main>: Conteúdo principal, semântica correta
+- section class="cards": Agrupa os 3 cards, seu CSS deixa eles em flex/grid
+- h2 class="tituloescondido":  H2 pra semântica mas escondido no CSS, porque leitor de tela precisa
+- div total / estoquebaixo / zerados: São os 3 indicadores. Estrutura p > h2 > p = rótulo > número grande > descrição
+
+
+O QUE EU APRENDE AQUI: Separar estrutura semântica (header, main, section) do visual (que está todo no global-style.css)
+-->
